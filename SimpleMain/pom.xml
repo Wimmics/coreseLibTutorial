@@ -1,63 +1,67 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>fr.inria.coreseTutorial</groupId>
-  <artifactId>coreseTutorial</artifactId>
-  <packaging>jar</packaging>
-  <version>1.0-SNAPSHOT</version>
-  <name>coreseTutorial</name>
-  <url>http://maven.apache.org</url>
-<repositories>
-<repository>
-<id>releases</id>
-<name>I3S Maven Releases Repository</name>
-<url>http://nyx.unice.fr:9007/nexus/content/repositories/i3s-public</url>
-</repository>
-</repositories>
-  <dependencies>
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>3.8.1</version>
-      <scope>test</scope>
-    </dependency>
-<dependency>
-        <groupId>fr.inria.wimmics</groupId>
-        <artifactId>kgengine</artifactId>
-        <version>[3.0,4.0)</version>
-    </dependency>
-
-  </dependencies>
-<build>
-    <plugins>
-        <plugin>
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>fr.inria.coreseTutorial</groupId>
+    <artifactId>coreseTutorial</artifactId>
+    <packaging>jar</packaging>
+    <version>1.0-SNAPSHOT</version>
+    <name>coreseTutorial</name>
+    <url>http://maven.apache.org</url>
+    
+    <dependencies>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>3.8.1</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>fr.inria.wimmics</groupId>
+            <artifactId>kgtool</artifactId>
+            <version>3.2.1</version>
+        </dependency>
+        <dependency>
+            <groupId>fr.inria.wimmics</groupId>
+            <artifactId>kgimport</artifactId>
+            <version>3.2.1</version>
+        </dependency>
+        <dependency>
+            <groupId>fr.inria.wimmics</groupId>
+            <artifactId>kgdqp</artifactId>
+            <version>3.2.1</version>
+            <classifier>jar-with-dependencies</classifier>
+        </dependency>
+    </dependencies>
+    <build>
+        <plugins>
+            <plugin>
                 <artifactId>maven-dependency-plugin</artifactId>
                 <version>2.2</version>
-        </plugin>
-      <plugin>
-        <artifactId>maven-assembly-plugin</artifactId>
-        <version>2.6</version>
-        <configuration>
-          <descriptorRefs>
-            <descriptorRef>jar-with-dependencies</descriptorRef>
-          </descriptorRefs>
-	  <archive>
- 		<manifest>
-			<mainClass>fr.inria.coreseTutorial.App</mainClass>
-		</manifest>
-	  </archive>
-        </configuration>
-	<executions>
-          <execution>
-            <id>make-assembly</id> <!-- this is used for inheritance merges -->
-            <phase>package</phase> <!-- bind to the packaging phase -->
-            <goals>
-              <goal>single</goal>
-            </goals>
-          </execution>
-        </executions>
-      </plugin>
-    </plugins>
-</build>
+            </plugin>
+            <plugin>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <version>2.6</version>
+                <configuration>
+                    <descriptorRefs>
+                        <descriptorRef>jar-with-dependencies</descriptorRef>
+                    </descriptorRefs>
+                    <archive>
+                        <manifest>
+                            <mainClass>fr.inria.coreseTutorial.App</mainClass>
+                        </manifest>
+                    </archive>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>make-assembly</id> <!-- this is used for inheritance merges -->
+                        <phase>package</phase> <!-- bind to the packaging phase -->
+                        <goals>
+                            <goal>single</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
 </project>
 
