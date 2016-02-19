@@ -1,4 +1,4 @@
-package fr.inria.coreseTutorial;
+package fr.inria.wimmics.corese.tutorial;
 import fr.inria.acacia.corese.exceptions.EngineException;
 import fr.inria.edelweiss.kgram.core.Mappings;
 import fr.inria.edelweiss.kgraph.core.Graph;
